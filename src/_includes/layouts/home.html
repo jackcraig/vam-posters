@@ -2,18 +2,15 @@
 
 {% block content %}
 
-<p>hello dave</p>
-
-<p>{{objs.info.version}}</p>
+<p>V&A Posters</p>
 
 {% if objs.length %}
-<!-- <article class="[ studio-feed ] [ dot-shadow panel ] [ bg-tertiary-glare ]">
+<article class="[ studio-feed ] [ dot-shadow panel ] [ bg-tertiary-glare ]">
       <ul class="studio-feed__list">
         {% for item in objs %}
-			{{ item.systemNumber }}
+			<li>{{ item._primaryTitle }}</li>
         {% endfor %}
-      </ul> -->
-      <p>Test 123</p>
+      </ul>
 {% endif %}
 
 {% endblock %}
