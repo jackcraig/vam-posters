@@ -1,5 +1,5 @@
 ---
-title: 'Issue 33'
+title: 'V&A Posters'
 layout: 'layouts/home.html'
 ---
 
