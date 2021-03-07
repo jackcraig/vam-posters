@@ -2,10 +2,13 @@
 
 {% block content %}
 
-<h1>V&A Posters</h1> 
-<p>Total:{{objs.length}}</p>
+<section class="header">
+	<h1>V&A Posters</h1> 
+	<p>{{objs.length}} posters from the V&A Collections.</p>
+</section>
 
-<ul>
+<div class="row">
+<ul class="nav column">
 	<li><a href="#1910s">1910s</a></li>
 	<li><a href="#1920s">1920s</a></li>
 	<li><a href="#1930s">1930s</a></li>
@@ -17,7 +20,7 @@
 </ul>
 
 {% if objs.length %}
-<article class="[ studio-feed ] [ dot-shadow panel ] [ bg-tertiary-glare ]">
+<section class="poster-feed column">
       <ul class="studio-feed__list">
         
         <h2 id="1910s">1910s</h2>
@@ -78,6 +81,8 @@
 
       </ul>
 {% endif %}
+</section>
+</div>
 
 {% endblock %}
 
