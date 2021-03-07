@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+
+body {
+  background: white;
+  font-family: 'IBM Plex Mono', monospace;
+  padding: 20px
+}
+
+p, h1, h2, h3, h4, h5, h6, li {
+	margin-bottom: 10px;
+}
+
+h2 {
+	padding-bottom: 20px;
+	padding-top: 10px;
+	margin-bottom: 30px;
+	width: 100%;
+	border-bottom: 1px dotted #000;
+}
+
+img {
+	width: 100%;
+}
+
+#main-content {
+	  max-width: 756px;
+	   margin: 20px auto;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.header {
+	margin-bottom: 40px;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav {
+	flex: 1;
+	padding-top: 20px;
+	max-width: 200px;
+	position: -webkit-sticky;
+  	position: sticky;
+  	top: 20px;
+  	height: 500px;
+  	list-style: none;
+}
+
+.poster-feed {
+	flex: 2;
+}
+
+.item-poster {
+	list-style: none;
+	margin-bottom: 50px;
+}
+
+.item-poster img {
+	margin-bottom: 20px;
+}
+
+.item-poster p {
+	font-size: 12px;
+}
+
