@@ -1,5 +1,12 @@
 <li class="item-poster">
 	<img src="{{ item._images._iiif_image_base_url }}full/756,/0/default.jpg" alt="" width="" height="">
-	<p>{{item._primaryTitle}}</p>
-	<p>{{item._primaryDate}}</p>
+	<p>
+{% if item._primaryTitle %}
+	{{item._primaryTitle}}, 
+{% else %}
+	Poster,
+{% endif %}
+	{{item._primaryDate}}
+	</p>
+	<p>© Victoria and Albert Museum, London</p>
 </li>
