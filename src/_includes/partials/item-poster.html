@@ -1,5 +1,7 @@
 <li class="item-poster">
-	<img src="{{ item._images._iiif_image_base_url }}full/756,/0/default.jpg" alt="" width="" height="">
+	<a href="https://collections.vam.ac.uk/item/{{ item.systemNumber }}">
+		<img src="{{ item._images._iiif_image_base_url }}full/756,/0/default.jpg" alt="" width="" height="">
+	</a>
 	<p>
 {% if item._primaryTitle %}
 	{{item._primaryTitle}}, 
