@@ -61,6 +61,24 @@ img {
   	top: 20px;
   	height: 500px;
   	list-style: none;
+  	margin-top: 50px;
+}
+
+.nav li {
+	margin-bottom: 15px;
+	display: inline;
+}
+
+.nav-item {
+	color: #000;
+	text-decoration: none;
+	background-color: #eee;
+	padding: 5px 8px;
+	border-radius: 3px;
+}
+
+.nav-item:hover {
+	background-color: #ddd;
 }
 
 .poster-feed {
