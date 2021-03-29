@@ -8,7 +8,11 @@
 {% else %}
 	Poster,
 {% endif %}
+{% if item._primaryDate %}
 	{{item._primaryDate}}
+{% else %}
+	no recorded date
+{% endif %}
 	</p>
 	<p>© Victoria and Albert Museum, London</p>
 </li>
