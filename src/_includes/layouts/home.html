@@ -5,15 +5,8 @@
 <section class="header">
 	<h1>V&A Posters</h1> 
 	<p>A gallery of {{objs2.records.length}} historic Victoria and Albert museum posters.</p>
-    <p> {{objs2.records[1]._primaryDate}}</p>
-    <p>
-                {% for item in objs2.records %}
-                <img src="{{ item._images._iiif_image_base_url }}full/100,/0/default.jpg" alt="" width="100" height="100">
-                {{item.systemNumber}}
-        {% endfor %}
-
-    </p>
-</section>
+<!--     <p> {{objs2.records[1]._primaryDate}}</p>
+ --></section>
 
 <div class="row">
 <ul class="nav column">
@@ -27,8 +20,9 @@
 	<li><a href="#1980s" class="nav-item">1980</a></li>				
 </ul>
 
-{% if objs.length %}
+{% if objs2.records.length %}
 <section class="poster-feed column">
+
       <ul class="studio-feed__list">
         
         <h2 id="1910s">1910</h2>
@@ -42,6 +36,7 @@
         {% for item in objs2.records %}
         	{% if (item._primaryDate > 1920) and (item._primaryDate < 1930) %}
         		{% include "partials/item-poster.html" %}
+                {% else %}               
 			{% endif %}
         {% endfor %}
 
@@ -49,6 +44,7 @@
         {% for item in objs2.records %}
         	{% if (item._primaryDate > 1930) and (item._primaryDate < 1940) %}
         		{% include "partials/item-poster.html" %}
+                {% else %}               
 			{% endif %}
         {% endfor %}
 
@@ -56,6 +52,7 @@
         {% for item in objs2.records %}
         	{% if (item._primaryDate > 1940) and (item._primaryDate < 1950) %}
         		{% include "partials/item-poster.html" %}
+                {% else %}               
 			{% endif %}
         {% endfor %}
 
@@ -63,6 +60,7 @@
         {% for item in objs2.records %}
         	{% if (item._primaryDate > 1950) and (item._primaryDate < 1960) %}
         		{% include "partials/item-poster.html" %}
+                {% else %}               
 			{% endif %}
         {% endfor %}
 
@@ -70,6 +68,7 @@
         {% for item in objs2.records %}
         	{% if (item._primaryDate > 1960) and (item._primaryDate < 1970) %}
         		{% include "partials/item-poster.html" %}
+                {% else %}               
 			{% endif %}
         {% endfor %}
 
@@ -77,6 +76,7 @@
         {% for item in objs2.records %}
         	{% if (item._primaryDate > 1970) and (item._primaryDate < 1980) %}
         		{% include "partials/item-poster.html" %}
+                {% else %}               
 			{% endif %}
         {% endfor %}
 
@@ -84,12 +84,14 @@
         {% for item in objs2.records %}
         	{% if (item._primaryDate > 1980) and (item._primaryDate < 1990) %}
         		{% include "partials/item-poster.html" %}
+                {% else %}
 			{% endif %}
         {% endfor %}
 
       </ul>
-{% endif %}
+
 </section>
+{% endif %}
 </div>
 
 {% endblock %}
