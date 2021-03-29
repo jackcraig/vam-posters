@@ -28,7 +28,9 @@
         
         <h2 id="1910s">1910</h2>
         {% for item in objs2.records|sort(attribute='_primaryDate') %}
-            {% set date = item._primaryDate| truncate(4, true, "") %}
+            {% set date = item._primaryDate %}
+            {% set date = date | replace("ca. ", "") %}
+            {% set date = date | truncate(4, true, "") %}
                 {% if (date > 1910) and (date < 1920) %}
                     {% include "partials/item-poster.html" %}
                 {% endif %}
@@ -36,7 +38,9 @@
 
         <h2 id="1920s">1920</h2>
         {% for item in objs2.records|sort(attribute='_primaryDate') %}
-            {% set date = item._primaryDate| truncate(4, true, "") %}
+            {% set date = item._primaryDate %}
+            {% set date = date | replace("ca. ", "") %}
+            {% set date = date | truncate(4, true, "") %}
                 {% if (date > 1920) and (date < 1930) %}
                     {% include "partials/item-poster.html" %}
                 {% endif %}
@@ -44,7 +48,9 @@
 
         <h2 id="1930s">1930</h2>
         {% for item in objs2.records|sort(attribute='_primaryDate') %}
-            {% set date = item._primaryDate| truncate(4, true, "") %}
+            {% set date = item._primaryDate %}
+            {% set date = date | replace("ca. ", "") %}
+            {% set date = date | truncate(4, true, "") %}
                 {% if (date > 1930) and (date < 1940) %}
                     {% include "partials/item-poster.html" %}
                 {% endif %}
@@ -52,7 +58,9 @@
 
         <h2 id="1940s">1940</h2>
         {% for item in objs2.records|sort(attribute='_primaryDate') %}
-            {% set date = item._primaryDate| truncate(4, true, "") %}
+            {% set date = item._primaryDate %}
+            {% set date = date | replace("ca. ", "") %}
+            {% set date = date | truncate(4, true, "") %}
                 {% if (date > 1940) and (date < 1950) %}
                     {% include "partials/item-poster.html" %}
                 {% endif %}
@@ -60,7 +68,9 @@
 
         <h2 id="1950s">1950</h2>
         {% for item in objs2.records|sort(attribute='_primaryDate') %}
-            {% set date = item._primaryDate| truncate(4, true, "") %}
+            {% set date = item._primaryDate %}
+            {% set date = date | replace("ca. ", "") %}
+            {% set date = date | truncate(4, true, "") %}
                 {% if (date > 1950) and (date < 1960) %}
                     {% include "partials/item-poster.html" %}
                 {% endif %}
@@ -68,7 +78,9 @@
 
         <h2 id="1960s">1960</h2>
         {% for item in objs2.records|sort(attribute='_primaryDate') %}
-            {% set date = item._primaryDate| truncate(4, true, "") %}
+            {% set date = item._primaryDate %}
+            {% set date = date | replace("ca. ", "") %}
+            {% set date = date | truncate(4, true, "") %}
                 {% if (date > 1960) and (date < 1970) %}
                     {% include "partials/item-poster.html" %}
                 {% endif %}
@@ -76,7 +88,9 @@
 
         <h2 id="1970s">1970</h2>
         {% for item in objs2.records|sort(attribute='_primaryDate') %}
-            {% set date = item._primaryDate| truncate(4, true, "") %}
+            {% set date = item._primaryDate %}
+            {% set date = date | replace("ca. ", "") %}
+            {% set date = date | truncate(4, true, "") %}
                 {% if (date > 1970) and (date < 1980) %}
                     {% include "partials/item-poster.html" %}
                 {% endif %}
@@ -84,7 +98,9 @@
 
         <h2 id="1980s">1980</h2>
         {% for item in objs2.records|sort(attribute='_primaryDate') %}
-            {% set date = item._primaryDate| truncate(4, true, "") %}
+            {% set date = item._primaryDate %}
+            {% set date = date | replace("ca. ", "") %}
+            {% set date = date | truncate(4, true, "") %}
                 {% if (date > 1980) and (date < 1990) %}
                     {% include "partials/item-poster.html" %}
                 {% endif %}
@@ -93,7 +109,9 @@
 
         <h2 id="unknown">Unknown</h2>
         {% for item in objs2.records|sort(attribute='_primaryDate') %}
-            {% set date = item._primaryDate| truncate(4, true, "") %}
+            {% set date = item._primaryDate %}
+            {% set date = date | replace("ca. ", "") %}
+            {% set date = date | truncate(4, true, "") %}
             {% if (date > 1910) and (date < 1990)  %}
                 {% else %}
                     {% include "partials/item-poster.html" %}
