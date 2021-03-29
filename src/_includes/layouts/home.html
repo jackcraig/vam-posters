@@ -4,8 +4,8 @@
 
 <section class="header">
 	<h1>V&A Posters</h1> 
-	<p>A gallery containing {{objs2.records.length}} posters from the history of the Victoria and Albert museum.</p>
-<!--     <p> {{objs2.records[1]._primaryDate}}</p>
+	<p>A gallery containing {{objs.records.length}} posters from the history of the Victoria and Albert museum.</p>
+<!--     <p> {{objs.records[1]._primaryDate}}</p>
  --></section>
 
 <div class="row">
@@ -21,13 +21,13 @@
     <li><a href="#unknown" class="nav-item">Unknown</a></li> 				
 </ul>
 
-{% if objs2.records.length %}
+{% if objs.records.length %}
 <section class="poster-feed column">
 
       <ul class="studio-feed__list">
         
         <h2 id="1910s">1910</h2>
-        {% for item in objs2.records|sort(attribute='_primaryDate') %}
+        {% for item in objs.records|sort(attribute='_primaryDate') %}
             {% set date = item._primaryDate %}
             {% set date = date | replace("ca. ", "") %}
             {% set date = date | truncate(4, true, "") %}
@@ -37,7 +37,7 @@
         {% endfor %}
 
         <h2 id="1920s">1920</h2>
-        {% for item in objs2.records|sort(attribute='_primaryDate') %}
+        {% for item in objs.records|sort(attribute='_primaryDate') %}
             {% set date = item._primaryDate %}
             {% set date = date | replace("ca. ", "") %}
             {% set date = date | truncate(4, true, "") %}
@@ -47,7 +47,7 @@
         {% endfor %}
 
         <h2 id="1930s">1930</h2>
-        {% for item in objs2.records|sort(attribute='_primaryDate') %}
+        {% for item in objs.records|sort(attribute='_primaryDate') %}
             {% set date = item._primaryDate %}
             {% set date = date | replace("ca. ", "") %}
             {% set date = date | truncate(4, true, "") %}
@@ -57,7 +57,7 @@
         {% endfor %}
 
         <h2 id="1940s">1940</h2>
-        {% for item in objs2.records|sort(attribute='_primaryDate') %}
+        {% for item in objs.records|sort(attribute='_primaryDate') %}
             {% set date = item._primaryDate %}
             {% set date = date | replace("ca. ", "") %}
             {% set date = date | truncate(4, true, "") %}
@@ -67,7 +67,7 @@
         {% endfor %}
 
         <h2 id="1950s">1950</h2>
-        {% for item in objs2.records|sort(attribute='_primaryDate') %}
+        {% for item in objs.records|sort(attribute='_primaryDate') %}
             {% set date = item._primaryDate %}
             {% set date = date | replace("ca. ", "") %}
             {% set date = date | truncate(4, true, "") %}
@@ -77,7 +77,7 @@
         {% endfor %}
 
         <h2 id="1960s">1960</h2>
-        {% for item in objs2.records|sort(attribute='_primaryDate') %}
+        {% for item in objs.records|sort(attribute='_primaryDate') %}
             {% set date = item._primaryDate %}
             {% set date = date | replace("ca. ", "") %}
             {% set date = date | truncate(4, true, "") %}
@@ -87,7 +87,7 @@
         {% endfor %}
 
         <h2 id="1970s">1970</h2>
-        {% for item in objs2.records|sort(attribute='_primaryDate') %}
+        {% for item in objs.records|sort(attribute='_primaryDate') %}
             {% set date = item._primaryDate %}
             {% set date = date | replace("ca. ", "") %}
             {% set date = date | truncate(4, true, "") %}
@@ -97,7 +97,7 @@
         {% endfor %}
 
         <h2 id="1980s">1980</h2>
-        {% for item in objs2.records|sort(attribute='_primaryDate') %}
+        {% for item in objs.records|sort(attribute='_primaryDate') %}
             {% set date = item._primaryDate %}
             {% set date = date | replace("ca. ", "") %}
             {% set date = date | truncate(4, true, "") %}
@@ -108,7 +108,7 @@
 
 
         <h2 id="unknown">Unknown</h2>
-        {% for item in objs2.records|sort(attribute='_primaryDate') %}
+        {% for item in objs.records|sort(attribute='_primaryDate') %}
             {% set date = item._primaryDate %}
             {% set date = date | replace("ca. ", "") %}
             {% set date = date | truncate(4, true, "") %}

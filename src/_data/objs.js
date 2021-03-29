@@ -1,32 +1,51 @@
-const Cache = require('@11ty/eleventy-cache-assets');
+const Cache = require("@11ty/eleventy-cache-assets");
 
-/**
- * Grabs the remote data for studio images and returns back
- * an array of objects
- *
- * @returns {Array} Empty or array of objects
- */
+// Cache the API request url passed in 
+async function fetchData(url) {
+    console.log("Attempting to Cache API request");
+    try {
+        let json = await Cache(url, {
+            duration: "1d",
+            type: "json",
+        });
+        console.log("Test response:" + json.info.version);
+        // return json.records;
+        // return {
+        //     // systemNumber: json.records[0].systemNumber,
+        //     // _primaryTitle: json.records[0]._primaryTitle,
+        //     // _primaryDate: json.records[0]._primaryDate,
+        //     // _iiif_image_base_url: json.records[0]._images
+        // }
+        return json.records;
+    }
+    catch (e) {
+        console.log("Error caching API data");
+        return [];
+    }
+}
 
+module.exports = async function() {
+    try {
+        const array1 = await fetchData("https://api.vam.ac.uk/v2/objects/search?&id_category=THES252692&kw_object_type=Poster&page_size=100&response_format=json&order_by=date&order_sort=desc&images_exist=1");
+        const array2 = await fetchData("https://api.vam.ac.uk/v2/objects/search?id_person=A7753&kw_object_type=Poster&page_size=100&response_format=json&order_by=date&order_sort=desc&images_exist=1");
 
-// module.exports = async function() {
-//   try {
-//     // https://developer.github.com/v3/repos/#get
-//     let json = await Cache("https://api.vam.ac.uk/v2/objects/search?&id_category=THES252692&kw_object_type=Poster&page_size=100&response_format=json&order_by=date&order_sort=desc&images_exist=1", {
-//       duration: "1d", // 1 day
-//       type: "json", // also supports "text" or "buffer"
-//     });
-//     console.log("hello jack" + json.info.version);
-//     return json.records;
-//   } catch (ex) {
-//     console.log(ex);
+        // Merges records into one array and uses systemNumber to remove duplicates
+        function mergeDedupe(array) {
+            var a = array.concat();
+                for(var i=0; i<a.length; ++i) {
+                    // console.log("yep" + a[i].systemNumber);
+                for(var j=i+1; j<a.length; ++j) {
+                    if(a[i].systemNumber === a[j].systemNumber)
+                        a.splice(j--, 1);
+            }
+        }
+            return a;
+        }
 
-//     // If failed, return back an empty array
-//     return [];
-//   }
-// };
-
-// // Test
-// module.exports = function() {
-//   return "JACK";
-// };
-
+        var records = mergeDedupe(array1.concat(array2));
+        // return the promise 
+        return { records };
+    } catch (e) {
+        console.log("Error returning multiple cached API data");
+    } 
+};
